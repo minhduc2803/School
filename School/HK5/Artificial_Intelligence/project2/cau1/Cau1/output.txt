@@ -1,0 +1,46 @@
+5
+R
+(-U OR -Q OR S)
+(-Q OR -R)
+Q
+(-H OR S OR -R)
+9
+(-U OR -Q)
+-R
+(-Q OR S)
+(-U OR -H OR S)
+(S OR -R)
+-Q
+(-U OR S)
+(-H OR S)
+(-H OR -R)
+5
+-U
+S
+(-U OR -H)
+-H
+{}
+YES
+5
+(-Q OR -R)
+(S OR -H OR -R)
+R
+(S OR -Q OR -U)
+Q
+9
+(S OR -Q)
+(S OR -H)
+(-H OR -R)
+(S OR -H OR -U)
+-Q
+(S OR -R)
+(-Q OR -U)
+-R
+(S OR -U)
+5
+S
+-U
+-H
+(-H OR -U)
+{}
+YES

@@ -1,0 +1,10 @@
+﻿  DailyEmployee.cpp
+  main.cpp
+main.cpp(22): warning C4018: '<': signed/unsigned mismatch
+  Manage.cpp
+  Productemployee.cpp
+  Generating code
+  All 266 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  1712358-Lab13-Polymorphism.vcxproj -> F:\code\OOP\practice\Tuan_10\1712358-Lab13-Polymorphism\1712358-Lab13-Polymorphism\Release\1712358-Lab13-Polymorphism.exe
+  1712358-Lab13-Polymorphism.vcxproj -> F:\code\OOP\practice\Tuan_10\1712358-Lab13-Polymorphism\1712358-Lab13-Polymorphism\Release\1712358-Lab13-Polymorphism.pdb (Full PDB)

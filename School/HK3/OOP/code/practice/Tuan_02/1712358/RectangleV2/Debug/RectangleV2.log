@@ -1,0 +1,7 @@
+﻿  main.cpp
+f:\code\oop\practice\tuan_02\1712358\rectanglev2\main.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\code\oop\practice\tuan_02\1712358\rectanglev2\main.cpp(19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  RectangleV2.cpp
+  Generating Code...
+  RectangleV2.vcxproj -> F:\code\OOP\practice\Tuan_02\1712358\Debug\RectangleV2.exe
+  RectangleV2.vcxproj -> F:\code\OOP\practice\Tuan_02\1712358\Debug\RectangleV2.pdb (Partial PDB)

@@ -1,0 +1,7 @@
+﻿  main.cpp
+f:\code\oop\theory\bigproject\bigproject\main.cpp(41): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\corecrt_wstring.h(127): note: see declaration of 'wcscpy'
+f:\code\oop\theory\bigproject\bigproject\main.cpp(106): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\conio.h(452): note: see declaration of 'getch'
+  Bigproject.vcxproj -> F:\code\OOP\theory\BigProject\Debug\Bigproject.exe
+  Bigproject.vcxproj -> F:\code\OOP\theory\BigProject\Debug\Bigproject.pdb (Partial PDB)

@@ -1,0 +1,128 @@
+nature_ninjutsu(fire_release).
+nature_ninjutsu(water_release).
+nature_ninjutsu(earth_release).
+nature_ninjutsu(lightning_release).
+nature_ninjutsu(wind_release).
+nature_ninjutsu(yin_release).
+nature_ninjutsu(yang_release).
+kekkei_genkai_ninjutsu(boil_release).
+kekkei_genkai_ninjutsu(wood_release).
+kekkei_genkai_ninjutsu(explosion_release).
+kekkei_genkai_ninjutsu(magnet_release).
+kekkei_genkai_ninjutsu(scorch_release).
+kekkei_genkai_ninjutsu(lava_release).
+kekkei_genkai_ninjutsu(storm_release).
+kekkei_genkai_ninjutsu(blaze_release).
+kekkei_genkai_ninjutsu(ice_release).
+kekkei_genkai_ninjutsu(yin_yang_release).
+kekkei_tota_ninjutsu(dust_release).
+weaker_element(fire,water).
+weaker_element(water,earth).
+weaker_element(earth,lightning).
+weaker_element(lightning,wind).
+weaker_element(wind,fire).
+nature_transformation(fire,fire_release).
+nature_transformation(water,water_release).
+nature_transformation(earth,earth_release).
+nature_transformation(lightning,lightning_release).
+nature_transformation(wind,wind_release).
+nature_transformation(yin,yin_release).
+nature_transformation(yang,yang_release).
+kekkei_genkai(yin,yang,yin_yang_release).
+kekkei_genkai(fire,water,boil_release).
+kekkei_genkai(water,earth,wood_release).
+kekkei_genkai(earth,lightning,explosion_release).
+kekkei_genkai(lightning,wind,magnet_release).
+kekkei_genkai(wind,fire,scorch_release).
+kekkei_genkai(fire,earth,lava_release).
+kekkei_genkai(water,lightning,storm_release).
+kekkei_genkai(lightning,fire,blaze_release).
+kekkei_genkai(wind,water,ice_release).
+kekkei_tota(fire,earth,wind,dust_release).
+chackra_nature(naruto,wind).
+chackra_nature(sasuke,fire).
+chackra_nature(kakashi,lightning).
+chackra_nature(itachi,fire).
+chackra_nature(obito,fire).
+chackra_nature(tsunade,yang).
+chackra_nature(hinata,fire).
+chackra_nature(sakura,earth).
+chackra_nature(madara,fire).
+chackra_nature(jiraiya,wind).
+chackra_nature(minato,wind).
+chackra_nature(terumi,water).
+chackra_nature(terumi,fire).
+chackra_nature(terumi,earth).
+chackra_nature(hashirama,water).
+chackra_nature(hashirama,earth).
+chackra_nature(haku,wind).
+chackra_nature(haku,water).
+chackra_nature(onoki,fire).
+chackra_nature(onoki,earth).
+chackra_nature(onoki,wind).
+chackra_nature(neji,fire).
+clan(naruto,uzumaki).
+clan(sasuke,uchiha).
+clan(itachi,uchiha).
+clan(madara,uchiha).
+clan(obito,uchiha).
+clan(kakashi,hatake).
+clan(tsunade,senju).
+clan(hashirama,senju).
+clan(hinata,hyuuga).
+clan(neji,hyuuga).
+clan(sakura,haruno).
+clan(jiraiya,senju).
+clan(minato,uzumaki).
+clan(terumi,kirigakure).
+clan(haku,yuki).
+clan(onoki,kamizuru).
+dojutsu(sharingan).
+dojutsu(byakugan).
+dojutsu(mangekyo_sharingan).
+kekkei(uchiha,sharingan).
+kekkei(hyuuga,byakugan).
+death_witness(itachi).
+death_witness(obito).
+death_witness(madara).
+death_witness(kakashi).
+stronger_element(X,Y) :-
+    weaker_element(Y,X).
+ninjutsu(X) :-
+    nature_ninjutsu(X).
+ninjutsu(X) :-
+    kekkei_genkai_ninjutsu(X).
+ninjutsu(X) :-
+    kekkei_tota_ninjutsu(X).
+release_type(X,nature_transformation) :-
+    nature_ninjutsu(X).
+release_type(X,kekkei_genkai) :-
+    kekkei_genkai_ninjutsu(X).
+release_type(X,kekkei_tota) :-
+    kekkei_tota_ninjutsu(X).
+nature_ability(X,Y) :-
+    chackra_nature(X,Z),
+    nature_transformation(Z,Y).
+dojutsu_ability(X,Y) :-
+    clan(X,C),
+    kekkei(C,Y).
+dojutsu_ability(X,mangekyo_sharingan) :-
+    clan(X,uchiha),
+    death_witness(X).
+kekkei_genkai_ability(X,Y) :-
+    chackra_nature(X,A),
+    chackra_nature(X,B),
+    kekkei_genkai(A,B,Y).
+kekkei_genkai_ability(X,Y) :-
+    dojutsu_ability(X,Y).
+kekkei_tota_ability(X,Y) :-
+    chackra_nature(X,A),
+    chackra_nature(X,B),
+    chackra_nature(X,C),
+    kekkei_tota(A,B,C,Y).
+ability(X,Y) :-
+    nature_ability(X,Y).
+ability(X,Y) :-
+    kekkei_genkai_ability(X,Y).
+ability(X,Y) :-
+    kekkei_tota_ability(X,Y).

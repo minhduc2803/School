@@ -1,0 +1,146 @@
+parent(elizabeth,charles).
+parent(elizabeth,anne).
+parent(elizabeth,edward).
+parent(elizabeth,andrew).
+parent(philip,charles).
+parent(philip,anne).
+parent(philip,edward).
+parent(philip,andrew).
+parent(diana,william).
+parent(diana,harry).
+parent(charles,william).
+parent(charles,harry).
+parent(mark,peter).
+parent(mark,zara).
+parent(anne,peter).
+parent(anne,zara).
+parent(edward,louise).
+parent(edward,james).
+parent(sophie,louise).
+parent(sophie,james).
+parent(andrew,eugenie).
+parent(andrew,beatrice).
+parent(sarah,eugenie).
+parent(sarah,beatrice).
+parent(kate,george).
+parent(kate,charlotte).
+parent(kate,louis).
+parent(william,george).
+parent(william,charlotte).
+parent(william,louis).
+parent(harry,archie).
+parent(meghan,archie).
+male(philip).
+male(charles).
+male(mark).
+male(timothy).
+male(edward).
+male(andrew).
+male(william).
+male(harry).
+male(peter).
+male(mike).
+male(james).
+male(george).
+male(louis).
+male(archie).
+female(elizabeth).
+female(diana).
+female(camilla).
+female(anne).
+female(sophie).
+female(sarah).
+female(kate).
+female(meghan).
+female(autumn).
+female(zara).
+female(louise).
+female(eugenie).
+female(beatrice).
+female(charlotte).
+married(elizabeth,philip).
+married(charles,camilla).
+married(anne,timothy).
+married(edward,sophie).
+married(andrew,sarah).
+married(kate,william).
+married(harry,meghan).
+married(peter,autumn).
+married(zara,mike).
+divorced(diana,charles).
+divorced(mark,anne).
+father(X,Y) :- 
+    male(X),
+    parent(X,Y).
+mother(X,Y) :-
+    female(X),
+    parent(X,Y).
+husband(X,Y) :-
+    male(X),
+    (married(X,Y);married(Y,X)).
+wife(X,Y) :-
+    husband(Y,X).
+child(X,Y) :-
+    parent(Y,X).
+son(X,Y) :-
+    male(X),
+    parent(Y,X).
+daughter(X,Y) :-
+    female(X),
+    parent(Y,X).
+grandparent(X,Y) :-
+    parent(X,Z),
+    parent(Z,Y).
+grandfather(X,Y) :-
+    male(X),
+    parent(X,Z),
+    parent(Z,Y).
+grandmother(X,Y) :-
+    female(X),
+    parent(X,Z),
+    parent(Z,Y).
+grandchild(X,Y) :-
+    parent(Y,Z),
+    parent(Z,X).
+grandson(X,Y) :-
+    male(X),
+    parent(Y,Z),
+    parent(Z,X).
+granddaughter(X,Y) :-
+    female(X),
+    parent(Y,Z),
+    parent(Z,X).
+sibling(X,Y) :-
+    father(Z,X),
+    father(Z,Y),
+    X \= Y.
+brother(X,Y) :-
+    sibling(X,Y),
+    male(X).
+sister(X,Y) :-
+    sibling(X,Y),
+    female(X).
+true_aunt(X,Y) :-
+    parent(Z,Y),
+    sister(X,Z).
+in_law_aunt(X,Y) :-
+    parent(Z,Y),
+    brother(S,Z),
+    wife(X,S).
+aunt(X,Y) :-
+    true_aunt(X,Y);in_law_aunt(X,Y).
+true_uncle(X,Y) :-
+    parent(Z,Y),
+    brother(X,Z).
+in_law_uncle(X,Y) :-
+    parent(Z,Y),
+    sister(S,Z),
+    husband(X,S).
+uncle(X,Y) :-
+    true_uncle(X,Y);in_law_uncle(X,Y).
+niece(X,Y) :-
+    female(X),
+    (aunt(Y,X);uncle(Y,X)).
+nephew(X,Y) :-
+    male(X),
+    (aunt(Y,X);uncle(Y,X)).

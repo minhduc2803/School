@@ -1,0 +1,8 @@
+﻿  Source.cpp
+f:\pro\hk5\algorithm_complexity\bai_01\bai_01\header.h(121): warning C4018: '<': signed/unsigned mismatch
+f:\pro\hk5\algorithm_complexity\bai_01\bai_01\header.h(142): warning C4018: '<': signed/unsigned mismatch
+f:\pro\hk5\algorithm_complexity\bai_01\bai_01\header.h(177): warning C4018: '<': signed/unsigned mismatch
+f:\pro\hk5\algorithm_complexity\bai_01\bai_01\header.h(198): warning C4018: '<': signed/unsigned mismatch
+f:\pro\hk5\algorithm_complexity\bai_01\bai_01\header.h(235): warning C4018: '<': signed/unsigned mismatch
+f:\pro\hk5\algorithm_complexity\bai_01\bai_01\header.h(256): warning C4018: '<': signed/unsigned mismatch
+  Bai_01.vcxproj -> F:\Pro\HK5\Algorithm_Complexity\Bai_01\Debug\Bai_01.exe

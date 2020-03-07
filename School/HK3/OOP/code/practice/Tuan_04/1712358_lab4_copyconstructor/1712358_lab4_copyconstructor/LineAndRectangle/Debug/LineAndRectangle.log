@@ -1,0 +1,8 @@
+﻿Build started 10/18/2018 10:15:59 AM.
+     1>Project "C:\Users\sv\Downloads\1712358_lab4_copyconstructor\LineAndRectangle\LineAndRectangle.vcxproj" on node 2 (ClCompile target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.Cpp.Platform.targets(64,5): error MSB8020: The build tools for v141 (Platform Toolset = 'v141') cannot be found. To build using the v141 build tools, please install v141 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Upgrade Solution...".
+     1>Done Building Project "C:\Users\sv\Downloads\1712358_lab4_copyconstructor\LineAndRectangle\LineAndRectangle.vcxproj" (ClCompile target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.01

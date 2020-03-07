@@ -1,0 +1,6 @@
+﻿  main.cpp
+f:\code\oop\practice\tuan_02\1712358\trianglev2\main.cpp(18): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\code\oop\practice\tuan_02\1712358\trianglev2\main.cpp(21): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\code\oop\practice\tuan_02\1712358\trianglev2\main.cpp(24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  TriangleV2.vcxproj -> F:\code\OOP\practice\Tuan_02\1712358\Debug\TriangleV2.exe
+  TriangleV2.vcxproj -> F:\code\OOP\practice\Tuan_02\1712358\Debug\TriangleV2.pdb (Partial PDB)

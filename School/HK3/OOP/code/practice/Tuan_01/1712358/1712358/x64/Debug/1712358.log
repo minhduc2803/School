@@ -1,0 +1,6 @@
+﻿  CDate.cpp
+f:\code\oop\practice\tuan_01\1712358\1712358\cdate.cpp(197): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdlib.h(1334): note: see declaration of 'itoa'
+f:\code\oop\practice\tuan_01\1712358\1712358\cdate.cpp(198): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdlib.h(1334): note: see declaration of 'itoa'
+  1712358.vcxproj -> F:\code\OOP\practice\Tuan_01\1712358\x64\Debug\1712358.exe

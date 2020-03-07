@@ -1,0 +1,8 @@
+﻿  handle.cpp
+  main.cpp
+  Generating code
+f:\code\datastructureandalgorithm\practice\tuan_04\1712358_tuan_04\1712358_tuan_04\handle.cpp(64): warning C4715: 'CountNodeLevel_h': not all control paths return a value
+f:\code\datastructureandalgorithm\practice\tuan_04\1712358_tuan_04\1712358_tuan_04\handle.cpp(79): warning C4715: 'TraversalByLevel': not all control paths return a value
+  All 19 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  1712358_Tuan_04.vcxproj -> F:\code\DataStructureAndAlgorithm\practice\Tuan_04\1712358_Tuan_04\Release\1712358_Tuan_04.exe

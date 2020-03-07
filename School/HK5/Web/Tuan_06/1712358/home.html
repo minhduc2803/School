@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<htm>
+<head>
+    <title>Trang đăng nhập</title>
+    <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+    <div class="content">
+        <form name='dangnhap' class="dangnhap" onsubmit="login();return false">
+        <h2>Đăng nhập ngay</h2>
+        <input type='text' name="username" placeholder="User name" class='username' required>
+        <p class="username-e"></p>
+        <div class="botton">
+                <input type="submit" value="Đăng nhập" >
+        </div>
+        </form>
+
+        <form name='dangky' class="dangky" onsubmit="register();return false">
+
+        <h2>Đăng ký tài khoản mới</h2>
+        <div>
+        <input type='text' name="Hoten" placeholder="Họ và tên" class='hoten' required>
+        <p  class="hoten-e"></p>
+        </div>
+
+        <div>
+        <input type='text' name="username" placeholder="User name" class='username' required>
+        <p  class="username-e"></p>
+        </div>
+        
+        <div>
+        <input type='text' name="email" placeholder="Email" class='email' required>
+        <p  class="email-e"></p>
+        </div>
+
+        <div>
+        <input type='text' name="phone" placeholder="Số điện thoại" class='phone' required>
+        <p  class="phone-e"></p>
+        </div>
+
+        <div>
+        <input type='text' name="ngaysinh" placeholder="Ngày sinh: dd/mm/yyyy" class='ngaysinh' required>
+        <p  class="ngaysinh-e"></p>
+        </div>
+
+        <div class="botton">
+        <input type="submit" value="Đăng ký">
+        </div>
+
+        </form>
+    </div>
+
+    <script src='home.js'></script>
+</body>
+</html>

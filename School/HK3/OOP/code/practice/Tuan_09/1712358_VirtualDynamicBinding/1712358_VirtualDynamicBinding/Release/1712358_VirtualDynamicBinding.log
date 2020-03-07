@@ -1,0 +1,26 @@
+﻿  cow.cpp
+  elip.cpp
+elip.cpp(5): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+elip.cpp(6): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+elip.cpp(9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+elip.cpp(10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  goat.cpp
+  line.cpp
+line.cpp(5): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+line.cpp(6): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+line.cpp(9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+line.cpp(10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+main.cpp(28): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+main.cpp(60): warning C4018: '<': signed/unsigned mismatch
+  Point.cpp
+  rectangle.cpp
+rectangle.cpp(5): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+rectangle.cpp(6): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+rectangle.cpp(9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+rectangle.cpp(10): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  sheep.cpp
+  Generating code
+  All 289 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  1712358_VirtualDynamicBinding.vcxproj -> F:\code\OOP\practice\Tuan_09\1712358_VirtualDynamicBinding\Release\1712358_VirtualDynamicBinding.exe

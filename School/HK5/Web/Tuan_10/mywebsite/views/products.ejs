@@ -1,0 +1,14 @@
+
+  <% for(let i=0;i<pro.length;i++){ %>
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title"><%=pro[i].ProName%></h5>
+          <p class="card-text"><%=pro[i].Price%> đ</p>
+          <a href="/<%=pro[i].CatID%>/<%=pro[i].ProID%>/detail" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    
+  <%}%>
+
+

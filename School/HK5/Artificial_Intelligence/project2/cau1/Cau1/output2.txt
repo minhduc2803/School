@@ -1,0 +1,16 @@
+2
+-C
+(-B OR C)
+7
+(-B OR A)
+(-A OR C OR B)
+(-B OR C OR A)
+-B
+(-C OR B OR A)
+(-A OR C)
+(-C OR A)
+3
+(-C OR B)
+(-A OR B)
+(-C OR A OR B)
+NO

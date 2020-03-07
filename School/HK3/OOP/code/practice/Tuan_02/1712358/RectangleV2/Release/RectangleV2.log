@@ -1,0 +1,9 @@
+﻿  main.cpp
+main.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+main.cpp(19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Point.cpp
+  RectangleV2.cpp
+  Generating code
+  All 20 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  RectangleV2.vcxproj -> F:\code\OOP\practice\Tuan_02\1712358\Release\RectangleV2.exe

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flexbox layout</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            color: #61460a;
+        }
+        .whole-page{
+            display: grid;
+            grid-template-areas:
+            "header header"
+            "sidebar content"
+            "footer footer";
+            grid-template-columns:
+            [column-1] 15%
+            [column-2] 85%;
+            grid-template-rows: 
+            [row-1] 80px
+            [row-2] 500px
+            [row-3] 80px;
+        }
+        .header{
+            grid-area: header;
+        }
+        .sidebar{
+            grid-area: sidebar;
+            background-color:#e48686;
+        }
+        .content{
+            grid-area: content;
+            background-color:feffdd;
+        }
+        footer{
+            grid-area: footer;
+        }
+        .header, footer{
+            
+            background-color: #b8bdff;
+        }
+        .header, .sidebar, .content, footer{
+            border:solid;
+            border-color:#313ba9;
+            border-width: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="whole-page">
+        <div class="header">Header</div>
+        
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Main Content</div>
+       
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+let total_pages = actors.total_pages;
+    let start = Math.floor((page-1)/10)*10+1;
+    let end = start+9;
+    let dis = "";
+    let act = "";
+    if(start==1)
+      dis = "disabled";
+    $('#pagination').append(`
+    <li><a href="#" class="${dis}" onclick="load_actor('${key_search}',${1})">First</a></li>
+      <li>
+          <a href="#" class="${dis}" onclick="load_actor('${key_search}',${start-1})">
+            <span aria-hidden="true">&laquo;</span>
+           
+          </a>
+        </li>`);
+    dis = "";
+    for(let i=start;i<=end;i++){
+      if(i==page)
+        act = "disabled active";
+      else
+        act = "";
+      $('#pagination').append(`
+      <li><a href="#" class="${act}" onclick="load_actor('${key_search}',${i})">${i}</a></li>`);
+
+      if(i==total_pages){
+        dis = " disabled";
+        break;
+      }
+      
+    }
+    $('#pagination').append(`
+    <li>
+    <a href="#" class="${dis}" onclick="load_actor('${key_search}',${end+1})">
+      <span aria-hidden="true">&raquo;</span>
+    </a>
+  </li>
+  <li><a href="#" class="${dis}" onclick="load_actor('${key_search}',${total_pages})">Last</a></li>`);

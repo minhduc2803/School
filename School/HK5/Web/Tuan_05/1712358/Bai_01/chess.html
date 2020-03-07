@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Chess Board</title>
+    <script src='chess.js'></script>
+   
+    <style>
+       .board{
+           display: flex;
+           flex-wrap: wrap;
+           width: 480px;
+           height: 480px;
+           margin: 0 auto;
+           margin-top:50px;
+       }
+       .empty{
+           width: 60px;
+           height: 60px;
+       }
+       .dark{
+           background-color: #79a6ce;
+       }
+       .light{
+        background-color: #dedede;
+       }
+       .piece{
+           display: block;
+           margin: 0 auto;
+           width:50px;
+           padding: 0px;
+           font-size: 50px;
+       }
+    </style>
+</head>
+<body>
+    <div class="board">
+    </div>
+    <script>load()</script>
+    
+</body>
+</html>

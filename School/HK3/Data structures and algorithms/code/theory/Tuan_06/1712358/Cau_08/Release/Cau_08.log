@@ -1,0 +1,7 @@
+﻿  Cau_08.cpp
+  linkedlist.cpp
+  Generating code
+f:\code\datastructureandalgorithm\theory\tuan_06\1712358\cau_08\linkedlist.cpp(52): warning C4715: 'HaiDanhSachGiongNhauKhong': not all control paths return a value
+  All 15 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Cau_08.vcxproj -> F:\code\DataStructureAndAlgorithm\theory\Tuan_06\1712358\Release\Cau_08.exe

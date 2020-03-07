@@ -1,0 +1,7 @@
+﻿  main.cpp
+main.cpp(5): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  search.cpp
+  Generating code
+  All 15 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Bai_02.vcxproj -> F:\code\DataStructureAndAlgorithm\practice\Tuan_01\1712358_Tuan1\Release\Bai_02.exe

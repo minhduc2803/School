@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bé tập tính</title>
+    <style>
+        h1{
+            font-size:40px;
+            text-align: center;
+            margin-bottom: 100px;
+            margin-top: 100px;
+        }
+        .content{
+            margin: 0 auto;
+            font-size: 20px;
+            width:600px;
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-rows:40px 40px 40px 40px;
+            grid-template-areas:
+            'p1 s1 cong tru'
+            'p2 s2 nhan chia'
+            'p3 s3 sub1 sub2'
+            'p4 s4 s4 s4';
+        }
+        .kq{
+            margin: 8px 0px 0px 0px;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bé tập tính</h1>
+    <div class="content">
+        <p style='grid-area:p1;'>Số thứ nhất</p>
+        <p style='grid-area:p2;'>Số thứ hai</p>
+        <p style='grid-area:p3;'>Kết quả</p>
+        <p style='grid-area:p4;'>Thông báo</p>
+        <input type="number" style='grid-area:s1;' class='s1'>
+        <input type="number" style='grid-area:s2;' class="s2">
+        <div style='grid-area:s3; display:block;border: 1px solid #000;'><p class="kq"></p></div>
+        <p style='grid-area:s4;'class="anounce"></p>
+        <label style='grid-area:cong;vertical-align: middle;'><input type='radio' name="operation" class="cong">Cộng</label>
+        <label style='grid-area:tru;'><input type='radio' name="operation" class="tru">Trừ</label>
+        <label style='grid-area:nhan;'><input type='radio' name="operation" class="nhan">Nhân</label>
+        <label style='grid-area:chia;'><input type='radio' name="operation" class="chia">Chia</label>
+        <button style='grid-area:sub1;' onclick='calculate()'>Tính</button>
+        <div style='grid-area:sub2;'></div>       
+    </div>
+
+    <script>
+        function calculate(){
+            let a = document.getElementsByClassName('s1')[0].value;
+            let b = document.getElementsByClassName('s2')[0].value;
+            let c;
+            if (a==='' || b===''){
+                document.getElementsByClassName('anounce')[0].innerHTML = 'Bạn chưa nhập toán hạng !!!';
+                document.getElementsByClassName('kq')[0].innerHTML = '';
+                document.getElementsByClassName('s1')[0].value = '';
+                document.getElementsByClassName('s2')[0].value = '';
+            }
+            else{
+                a = Number(a);
+                b = Number(b);
+                if(document.getElementsByClassName('cong')[0].checked)
+                    c=a+b;
+            
+                else if(document.getElementsByClassName('tru')[0].checked)
+                    c=a-b;
+                else if(document.getElementsByClassName('nhan')[0].checked)
+                    c=a*b;
+                else if(document.getElementsByClassName('chia')[0].checked){
+                    if(b==0){
+                        document.getElementsByClassName('kq')[0].innerHTML = '';
+                        document.getElementsByClassName('anounce')[0].innerHTML = 'Không thể chia cho 0 !!!';
+                        return false;
+                    }
+                    else
+                        c=a/b;
+                }
+                else{
+                    document.getElementsByClassName('kq')[0].innerHTML = '';
+                    document.getElementsByClassName('anounce')[0].innerHTML = 'Bạn chưa chọn phép toán !!!';
+                    return false;
+                }
+                document.getElementsByClassName('anounce')[0].innerHTML = '';
+                document.getElementsByClassName('kq')[0].innerHTML = c;
+            }
+        }
+    </script>
+</body>
+</html>

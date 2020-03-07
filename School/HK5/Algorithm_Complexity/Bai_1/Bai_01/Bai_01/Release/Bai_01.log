@@ -1,0 +1,13 @@
+﻿  Source.cpp
+f:\pro\hk5\algorithm_complexity\bai_01\bai_01\header.h(121): warning C4018: '<': signed/unsigned mismatch
+f:\pro\hk5\algorithm_complexity\bai_01\bai_01\header.h(142): warning C4018: '<': signed/unsigned mismatch
+f:\pro\hk5\algorithm_complexity\bai_01\bai_01\header.h(177): warning C4018: '<': signed/unsigned mismatch
+f:\pro\hk5\algorithm_complexity\bai_01\bai_01\header.h(200): warning C4018: '<': signed/unsigned mismatch
+f:\pro\hk5\algorithm_complexity\bai_01\bai_01\header.h(237): warning C4018: '<': signed/unsigned mismatch
+f:\pro\hk5\algorithm_complexity\bai_01\bai_01\header.h(258): warning C4018: '<': signed/unsigned mismatch
+  Generating code
+  1 of 207 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Bai_01.vcxproj -> F:\Pro\HK5\Algorithm_Complexity\Bai_01\Release\Bai_01.exe

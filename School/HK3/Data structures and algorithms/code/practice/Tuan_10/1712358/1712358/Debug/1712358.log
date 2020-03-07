@@ -1,0 +1,5 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (1712358.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  main.cpp
+f:\code\datastructureandalgorithm\practice\tuan_10\1712358\1712358\main.cpp(97): warning C4018: '<': signed/unsigned mismatch
+  1712358.vcxproj -> F:\code\DataStructureAndAlgorithm\practice\Tuan_10\1712358\Debug\1712358_Bai02.exe
+  1712358.vcxproj -> F:\code\DataStructureAndAlgorithm\practice\Tuan_10\1712358\Debug\1712358_Bai02.pdb (Partial PDB)

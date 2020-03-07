@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        
+        <a class="navbar-brand" href="#">LOGO</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <% for(let i=0;i<cat.length;i++){ %>
+              <li id='<%=cat[i].CatID%>'><a href="/<%=cat[i].CatID%>/products"><%=cat[i].CatName%></a></li>
+              
+            <%}%>
+        </ul>
+      </div>
+    </div>
+
+    
+  </nav>

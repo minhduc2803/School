@@ -1,0 +1,4 @@
+﻿  main.cpp
+f:\code\datastructureandalgorithm\practice\tuan_01\1712358_tuan1\bai_02\main.cpp(5): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Bai_02.vcxproj -> F:\code\DataStructureAndAlgorithm\practice\Tuan_01\1712358_Tuan1\Debug\Bai_02.exe
+  Bai_02.vcxproj -> F:\code\DataStructureAndAlgorithm\practice\Tuan_01\1712358_Tuan1\Debug\Bai_02.pdb (Partial PDB)

@@ -1,0 +1,11 @@
+﻿  display.cpp
+f:\test\bgi\display.cpp(148): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdlib.h(1334): note: see declaration of 'itoa'
+f:\test\bgi\display.cpp(151): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdlib.h(1334): note: see declaration of 'itoa'
+f:\test\bgi\display.cpp(280): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdlib.h(1334): note: see declaration of 'itoa'
+f:\test\bgi\display.cpp(301): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdlib.h(1334): note: see declaration of 'itoa'
+  bgi.vcxproj -> F:\test\Debug\greatproject.exe
+  bgi.vcxproj -> F:\test\Debug\greatproject.pdb (Partial PDB)

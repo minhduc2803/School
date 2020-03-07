@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flexbox layout</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            color: #61460a;
+        }
+        .body-page{
+            display: flex;
+            height:500px
+        }
+        .body-page .sidebar{
+            flex-basis: 15%;
+            background-color:#ffb0c9;
+        }
+        .body-page .content{
+            flex-basis: 85%;
+            background-color:#98b3e2;
+        }
+        .header, footer{
+            height: 80px;
+            background-color: #e6f3f5;
+            display: block;
+            border:solid;
+            border-color:#ec8303;
+            border-width: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Header
+    </div>
+    <div class="body-page">
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Main Content</div>
+    </div>
+    <footer>
+        Footer
+    </footer>
+</body>
+</html>

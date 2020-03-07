@@ -1,0 +1,5 @@
+﻿  main.cpp
+f:\code\oop\practice\tuan_07\1712358_lab7\1712358_lab7\main.cpp(42): warning C4018: '>=': signed/unsigned mismatch
+f:\code\oop\practice\tuan_07\1712358_lab7\1712358_lab7\main.cpp(68): warning C4018: '>=': signed/unsigned mismatch
+  1712358_lab7.vcxproj -> F:\code\OOP\practice\Tuan_07\1712358_lab7\Debug\1712358_lab7.exe
+  1712358_lab7.vcxproj -> F:\code\OOP\practice\Tuan_07\1712358_lab7\Debug\1712358_lab7.pdb (Partial PDB)

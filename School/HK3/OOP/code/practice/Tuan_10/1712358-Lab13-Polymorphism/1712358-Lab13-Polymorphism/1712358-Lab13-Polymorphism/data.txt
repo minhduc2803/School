@@ -1,0 +1,13 @@
+6
+Nguyen Minh Duc
+3 4500000 3
+Dinh Quang Duy
+2 250000 25
+Ngoc Minh Duy
+2 220000 17
+Minh Hien
+1 1200 150
+Hoang Ngoc Phu
+2 210000 12
+Nguyen Khuyen
+1 1500 90
