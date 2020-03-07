@@ -1,0 +1,65 @@
+<h2 class="text-center">Won items</h2>
+
+{{#if flag}}
+<div class="row py-2 d-flex justify-content-center">
+    {{#rs}}
+    <div class="col-2 p-3">
+        <a href="/pro/{{id}}" style="text-decoration: none;">
+            <div class="card mb-3 sd h-100 text-dark">
+                <script src="/javascripts/script.js"></script>
+                <script>newitem('{{start}}', 10);</script>
+
+                <img class=" card-img-top" src="/images/sp/{{id}}/thumb.jpg" alt="Card image cap" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">Title: {{name}}</h5>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </a>
+
+    </div>
+    <div class="col-10 p-3">
+        <div class="card mb-3 sd h-100 text-dark">
+            <div class="form-group">
+                <label for="review">Review:</label>
+                {{#if rate}}
+                <p>{{time rvdate 'Do MMM YYYY'}}</p>
+                <input type="text" class="form-control" value={{rvtext}} autocomplete="off" disabled>
+                {{else}}
+                <input type="text" class="form-control" id="review" autocomplete="off">
+                {{/if}}
+            </div>
+            <div class="form-group">
+                {{#if rate}}
+                {{#equal rate 1}}
+                <button class="btn btn-success">Like</button>
+                {{else}}
+                <button class="btn btn-danger">Dislike</button>
+                {{/equal}}
+                {{else}}
+                <button class="btn btn-success" onclick="review({{id}}, {{seller}}, 1)">Like</button>
+                <button class="btn btn-danger" onclick="review({{id}}, {{seller}}, -1)">Dislike</button>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    {{/rs}}
+</div>
+{{else}}
+<p class="text-center">Empty!</p>
+{{/if}}
+
+<div id="rsModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="rsTitle" class="modal-title"></h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal" onclick="refresh()">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

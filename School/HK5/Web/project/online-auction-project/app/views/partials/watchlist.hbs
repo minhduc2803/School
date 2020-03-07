@@ -1,0 +1,22 @@
+{{#if user.id}}
+<h3>Watch list</h3>
+<div id="wls" class="row">
+    {{#wl}}
+    <div id="wl{{id}}" class="col-12">
+        <a href="/pro/{{id}}" style="text-decoration: none;" class="text-dark">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                </div>
+                <div id="wlt${id}" class="card-footer">
+                    <script src="/javascripts/script.js"></script>
+                    <script>timeleft('wlt{{id}}', '{{end}}');</script>
+                </div>
+            </div>
+        </a>
+        <button onclick="rmwl('ib{{id}}', {{id}})" class="btn btn-danger float-right"
+            style="position: absolute; right: 20px; bottom: 7px;">remove</button>
+    </div>
+    {{/wl}}
+</div>
+{{/if}}

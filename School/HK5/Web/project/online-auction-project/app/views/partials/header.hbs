@@ -1,0 +1,70 @@
+<nav class="navbar navbar-dark bg-dark m-0">
+
+    <a class="navbar-brand ml-3" href="/">
+        <h1>Auction</h1>
+    </a>
+
+    <form class="form-inline" action="/search" method="GET">
+        <input type="search" name="keyword" class="form-control-lg mr-1" size="30" required="required">
+        <select class="custom-select-lg mr-1" name="cat">
+            <option selected>All Categories</option>
+            {{#cats}}
+            <option value="{{cat}}">{{cat}}</option>
+            {{/cats}}
+        </select>
+        <button class="btn btn-icon btn-light" type="submit"><i class="material-icons sz">search</i></button>
+    </form>
+
+    {{#equal user.type 2}}
+    <div class="nav-item dropdown mr-2">
+        <a class="nav-link dropdown btn btn-icon btn-light" href="#" id="navLogin" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="material-icons sz">assignment</i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="/seller/upload">Upload</a>
+        </div>
+    </div>
+    {{/equal}}
+
+    {{#unless user.id}}
+    <a class="btn btn-icon btn-light" href="/login">
+        <i class="material-icons sz">person</i>
+    </a>
+    {{else}}
+    <div class="nav-item dropdown mr-2">
+        <a class="nav-link dropdown btn btn-icon btn-light" href="#" id="navLogin" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="material-icons sz">person</i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="/acc/bid">My Auctions</a>
+            <a class="dropdown-item" href="/acc/won">Won items</a>
+            <a class="dropdown-item" href="/acc/watchlist">Watchlist</a>
+            <a class="dropdown-item" href="/acc/review">Reviews</a>
+            <a class="dropdown-item" href="/acc/profile">Profile</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/login/logout">Logout</a>
+        </div>
+    </div>
+    {{/unless}}
+</nav>
+
+{{#if cats}}
+<nav class="navbar border p-1 mb-5 shadow-sm">
+    <div class="nav-item m-auto">
+        {{#cats}}
+        <div class="hoverdown text-center">
+            <a href="/cat/{{cat}}"><button class="hoverbtn">{{cat}}</button></a>
+            <div class="hoverdown-content">
+                {{#../subs}}
+                {{#equal cat ../cat}}
+                <a href="/cat/{{cat}}/{{sub}}">{{sub}}</a>
+                {{/equal}}
+                {{/../subs}}
+            </div>
+        </div>
+        {{/cats}}
+    </div>
+</nav>
+{{/if}}

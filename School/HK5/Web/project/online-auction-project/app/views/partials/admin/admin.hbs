@@ -1,0 +1,36 @@
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      {{> (partial nav)}}
+      
+    </ul>
+  </div>
+
+<script>  function active_nav(id){
+    console.log(id);
+    var active_object = document.getElementById(id);
+    active_object.className+=' active';
+    active_object.setAttribute('aria-disabled',"true");
+    
+    
+  }
+ 
+  </script>
+  <script src="/javascripts/admin.js"></script>
+  
+  <div class="card-body">
+    {{> (partial content)}}
+  </div>
+</div>
+
+{{#active_nav}}
+<script>active_nav('{{this}}')</script>
+{{/active_nav}}
+
+{{#active_cat}}
+<script>active_nav('{{this}}')</script>
+{{/active_cat}}
+
+{{#active_sub}}
+<script>active_nav('{{this}}')</script>
+{{/active_sub}}

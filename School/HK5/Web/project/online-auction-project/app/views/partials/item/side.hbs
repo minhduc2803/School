@@ -1,0 +1,13 @@
+<div class="card-header text-light bg-dark">
+    <h3>{{catn}}</h3>
+</div>
+<div class="list-group">
+    {{#subs}}
+    {{#equal cat ../catn}}
+    <a href="/cat/{{../catn}}/{{sub}}"
+        class="btn list-group-item list-group-item-action font-weight-bold {{#equal sub ../subn}} active btn-light {{/equal}}">
+        <p>{{sub}}</p>
+    </a>
+    {{/equal}}
+    {{/subs}}
+</div>

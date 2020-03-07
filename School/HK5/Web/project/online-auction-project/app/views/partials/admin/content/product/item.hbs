@@ -1,0 +1,109 @@
+<div class="row py-2 d-flex justify-content-center">
+    <div class="col">
+        <div class="card">
+            <div class="row py-2">
+                <div class="col-6">
+                    <div class="containerSlide">
+                        <div class="mySlide">
+                            <img class=" card-img-top" src="/images/sp/{{item.id}}/main.jpg" alt="main"
+                                style="width: 100%;">
+                        </div>
+                        <div class="mySlide">
+                            <img class=" card-img-top" src="/images/sp/{{item.id}}/1.jpg" alt="1" style="width: 100%;">
+                        </div>
+                        <div class="mySlide">
+                            <img class=" card-img-top" src="/images/sp/{{item.id}}/2.jpg" alt="2" style="width: 100%;">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="demoSlide cursorSlide" src="/images/sp/{{item.id}}/main.jpg"
+                                    style="width: 100%;" onclick="currentSlide(1)" alt="main">
+                            </div>
+                            <div class="col-4">
+                                <img class="demoSlide cursorSlide" src="/images/sp/{{item.id}}/1.jpg"
+                                    style="width: 100%;" onclick="currentSlide(2)" alt="1">
+                            </div>
+                            <div class="col-4">
+                                <img class="demoSlide cursorSlide" src="/images/sp/{{item.id}}/2.jpg"
+                                    style="width: 100%;" onclick="currentSlide(3)" alt="2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card-body">
+                        <h5 class="card-title">Title: {{item.name}}</h5>
+                        <p class="card-text">Seller: {{item.sname}}</p>
+                        <p class="card-text">Seller rate: {{item.srate}}</p>
+                        {{#if item.n}}
+                        <p class="card-text">Price: {{item.price}}</p>
+                        <p class="card-text">Bidder: {{item.bname}}</p>
+                        <p class="card-text">Bidder rate: {{item.brate}}</p>
+                        <p class="card-text">bids: {{item.n}}</p>
+                        {{else}}
+                        <p class="card-text">Price: {{item.cost}}</p>
+                        {{/if}}
+                        {{#if item.cost2}}
+                        <p class="card-text">Price max: {{item.cost2}}</p>
+                        {{/if}}
+                        <p class="card-text">Start: {{time start 'Do MMM YYYY'}} </p>
+
+                        {{#unless item.status}}
+                        <p>Your bid:</p>
+                        <input id="bid" type="text">
+                        <button type="btn btn-success" onclick="cf('#bidModal')">PLACE
+                            BID</button>
+                        {{/unless}}
+                    </div>
+                    <div class="card-footer">
+                        <p id="i{{item.id}}" class="text-danger font-weight-bold"></p>
+                        <script src="/javascripts/script.js"></script>
+                        <script>dayleft('i{{item.id}}', '{{item.end}}');</script>
+                    </div>
+                    {{#if wl}}
+                    <button id="ib{{item.id}}" onclick="rm(this, {{item.id}})" class="btn btn-danger float-right"
+                        style="position: absolute; right: 20px; bottom: 20px;">remove</button>
+                    {{else}}
+                    <button id="ib{{item.id}}" onclick="add(this, {{item.id}})" class="btn btn-success float-right"
+                        style="position: absolute; right: 20px; bottom: 20px;">add</button>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col">
+                <div class="card">
+                    {{#if his}}
+                    <div class="col-12">
+                        <h3>History:</h3>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Date</th>
+                                <th>Bidder</th>
+                                <th>Price</th>
+                            </tr>
+                            {{#his}}
+                            <tr>
+                                <td>{{time create 'Do MMM YYYY, hh:mm'}}</td>
+                                <td>**** {{first}}</td>
+                                <td>{{cost}}</td>
+                            </tr>
+                            {{/his}}
+                        </table>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>[[]]
+        <div class="row py-2">
+            <div class="col">
+                <div class="card">
+                    <p class="card-text">Description: {{item.text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

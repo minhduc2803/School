@@ -1,0 +1,308 @@
+DROP DATABASE IF EXISTS AUCTION;
+CREATE DATABASE AUCTION;
+USE AUCTION;
+CREATE TABLE ADMIN
+(
+	ID INT auto_increment,
+    USERNAME VARCHAR(30) NOT NULL,
+    PASSWORD VARCHAR(30) NOT NULL,
+    EMAIL VARCHAR(50) NOT NULL,
+    PHONE VARCHAR(20) NOT NULL,
+    ADDRESS NVARCHAR(255) NOT NULL,
+     FIRST NVARCHAR(255) NOT NULL,
+    LAST NVARCHAR(255) NOT NULL,
+    NAME NVARCHAR(510) GENERATED ALWAYS AS (concat(last,' ',first)) virtual,
+    PRIMARY KEY(ID),
+    UNIQUE KEY(USERNAME),
+    UNIQUE KEY(PASSWORD)
+);
+CREATE TABLE USER(
+	ID INT auto_increment,
+    USERNAME VARCHAR(30) NOT NULL,
+    PASSWORD VARCHAR(30) NOT NULL,
+    EMAIL VARCHAR(50) NOT NULL,
+    PHONE VARCHAR(20) NOT NULL,
+    ADDRESS NVARCHAR(255) NOT NULL,
+    TYPE TINYINT(4) DEFAULT '0',
+    -- 0 = BIDDER
+    -- 1 = SELLER
+    RATE INT unsigned DEFAULT '0',
+    FIRST NVARCHAR(255) NOT NULL,
+    LAST NVARCHAR(255) NOT NULL,
+    NAME NVARCHAR(511) GENERATED ALWAYS AS (concat(first,' ',last)) virtual,
+    PRIMARY KEY(ID),
+    UNIQUE KEY (USERNAME),
+    UNIQUE KEY (PASSWORD)
+);
+
+CREATE TABLE TIER1 -- DANH MỤC CẤP 1
+(
+	ID INT NOT NULL auto_increment,
+    CATNAME NVARCHAR(100) NOT NULL,
+    PRIMARY KEY(ID),
+    UNIQUE KEY (CATNAME)
+);
+
+CREATE TABLE TIER2 -- DANH MỤC CẤP 2
+(
+	ID INT NOT NULL auto_increment,
+    TIERID INT NOT NULL, -- ID DANH MỤC CẤP 1
+    CATNAME NVARCHAR(100) NOT NULL,
+    PRIMARY KEY(ID),
+    UNIQUE KEY (CATNAME)
+);
+
+
+CREATE TABLE PRODUCT
+(
+    ID INT NOT NULL auto_increment,
+    CATID INT NOT NULL, -- DANH MỤC CẤP 2
+    SELLERID INT NOT NULL,
+    NAME NVARCHAR(255) NOT NULL,
+    UPTIME DATETIME NOT NULL,
+    COST BIGINT NOT NULL DEFAULT '0',-- GIÁ HIỆN TẠI
+    BUY BIGINT DEFAULT '0', -- GIÁ MUA NGAY
+    COSTJUMP BIGINT NOT NULL DEFAULT '0',
+    STATUS TINYINT(4) NOT NULL DEFAULT '0',
+    -- 0 = ĐANG ĐẤU GIÁ
+    -- 1 = ĐÃ CÓ NGƯỜI THẮNG
+    -- 2 = BỊ SELLER HAY ADMIN XÓA
+    ISRENEWAL BOOL DEFAULT FALSE,
+    PRIMARY KEY(ID),
+    CHECK (BUY>=COST)
+);
+
+CREATE TABLE FAVORITE
+(
+	USERID INT NOT NULL,
+    PROID INT NOT NULL,
+    PRIMARY KEY (USERID,PROID)
+);
+
+CREATE TABLE DESCRIBE
+(
+	ID INT NOT NULL auto_increment,
+	PROID INT NOT NULL,
+    DES NVARCHAR(4000) NOT NULL,
+    TIME DATETIME NOT NULL,
+    PRIMARY KEY(ID)
+);
+
+CREATE TABLE ALLOW
+-- DANH SÁCH NHỮNG SẢN PHẨM NÀO NGƯỜI BÁN CHO PHÉP NGƯỜI MUA NÀO RA GIÁ
+(
+	PROID INT NOT NULL,
+    USERID INT NOT NULL,
+    PRIMARY KEY(PROID,USERID)
+);
+
+CREATE TABLE COMMENT
+(
+	ID INT NOT NULL auto_increment,
+	PROID INT NOT NULL,
+    USERID INT NOT NULL, -- NGƯỜI ĐƯA RA NHẬN XÉT
+    COMMENT NVARCHAR(4000) NOT NULL,
+    TIME DATETIME NOT NULL,
+    PRIMARY KEY(ID)
+);
+
+CREATE TABLE BID
+(
+	ID INT NOT NULL auto_increment,
+    PROID INT NOT NULL,
+    USERID INT NOT NULL,-- ID NGƯỜI THAM GIA ĐẤU GIÁ
+    TIME DATETIME NOT NULL,
+    PRICE BIGINT NOT NULL,
+    PRIMARY KEY(ID)
+);
+
+CREATE TABLE RESTRICT
+-- DANH SÁCH NHỮNG NGƯỜI BỊ TỪ CHỐI ĐẤU GIÁ
+(
+    PROID INT NOT NULL,
+	USERID INT NOT NULL,
+    PRIMARY KEY(PROID,USERID)
+);
+
+
+CREATE TABLE PENDING
+-- DANH SÁCH CHỜ ĐƯỢC NÂNG CẤP THÀNH SELLER
+(
+	ID INT NOT NULL auto_increment,
+    USERID INT NOT NULL,
+    TIME DATETIME NOT NULL,
+    PRIMARY KEY(ID)
+);
+
+ALTER TABLE TIER2
+add
+	constraint FK_T2_T1
+    foreign key(TIERID)
+    references TIER1(ID);
+
+ALTER TABLE PRODUCT
+add
+	constraint FK_PR_T2
+    foreign key(CATID)
+    references TIER2(ID);
+
+ALTER TABLE PRODUCT
+add
+	constraint FK_PR_US
+    foreign key(SELLERID)
+    references USER(ID);
+
+ALTER TABLE FAVORITE
+add
+	constraint FK_FA_US
+    foreign key(USERID)
+    references USER(ID);
+    
+ALTER TABLE FAVORITE
+add
+	constraint FK_FA_PR
+    foreign key(PROID)
+    references PRODUCT(ID);
+    
+ALTER TABLE DESCRIBE
+add
+	constraint FK_DE_PR
+    foreign key(PROID)
+    references PRODUCT(ID);
+    
+ALTER TABLE ALLOW
+add
+	constraint FK_AL_PR
+    foreign key(PROID)
+    references PRODUCT(ID);
+    
+ALTER TABLE ALLOW
+add
+	constraint FK_AL_US
+    foreign key(USERID)
+    references USER(ID);
+    
+ALTER TABLE COMMENT
+add
+	constraint FK_CO_PR
+    foreign key(PROID)
+    references PRODUCT(ID);
+    
+ALTER TABLE COMMENT
+add
+	constraint FK_CO_US
+    foreign key(USERID)
+    references USER(ID);
+    
+ALTER TABLE BID
+add
+	constraint FK_BI_PR
+    foreign key(PROID)
+    references PRODUCT(ID);
+    
+ALTER TABLE BID
+add
+	constraint FK_BI_US
+    foreign key(USERID)
+    references USER(ID);
+    
+ALTER TABLE RESTRICT
+add
+	constraint FK_RE_PR
+    foreign key(PROID)
+    references PRODUCT(ID);
+    
+ALTER TABLE RESTRICT
+add
+	constraint FK_RE_US
+    foreign key(USERID)
+    references USER(ID);
+    
+ALTER TABLE PENDING
+add
+	constraint FK_PE_US
+    foreign key(USERID)
+    references USER(ID);    
+
+INSERT INTO ADMIN (USERNAME,PASSWORD,EMAIL,PHONE,ADDRESS,FIRST,LAST)
+VALUES ('Duy','123BCD','Duy@gmail.com','0123456789',
+N'Ấp A, xã B, huyện C, tỉnh D',N'Duy',N'Đặng Thành'),
+('Dung','123XYK','Dung@gmail.com','0123456789',
+N'Ấp A, xã B, huyện C, tỉnh D',N'Dũng',N'Phạm Quốc'),
+('Duc','123TCH','Duc@gmail.com','0123456789',
+N'Ấp A, xã B, huyện C, tỉnh D',N'Đức',N'Nguyễn Minh'),
+('Doan','123NDS','Doan@gmail.com','0123456789',
+N'Ấp A, xã B, huyện C, tỉnh D',N'Đoan',N'Nguyễn Thiện Tâm');
+
+INSERT INTO USER(USERNAME,PASSWORD,EMAIL,PHONE,ADDRESS,TYPE,FIRST,LAST)
+VALUES ('AAA','456AAS','bck@gmail.com','0123456789',
+N'Ấp A,xã B, huyện C, tỉnh D',0,N'An',N'Nguyễn Văn'),
+('BBB','456AASA','bck@gmail.com','0123456789',
+N'Ấp A,xã B, huyện C, tỉnh D',0,N'Bình',N'Phạm Thanh'),
+('CCC','456AASAA','bck@gmail.com','0123456789',
+N'Ấp A,xã B, huyện C, tỉnh D',1,N'Cường',N'Nguyễn Minh'),
+('XXX','456AASX','bckx@gmail.com','0123456789',
+N'Ấp A,xã B, huyện C, tỉnh D',1,N'Hằng',N'Nguyễn Thị Thanh'),
+('YYY','456AASY','bcky@gmail.com','0123456789',
+N'Ấp A,xã B, huyện C, tỉnh D',0,N'Yến',N'Nguyễn Phi');
+
+INSERT INTO TIER1(CATNAME)
+VALUES (N'Điện tử'),(N'Đồ nội thất'),(N'Tranh hội họa');
+
+INSERT INTO TIER2(TIERID,CATNAME)
+VALUES (1,N'Điện thoại di động'),(1,N'Máy tính xách tay'),
+(2,N'Bàn ghế'),(2,N'Tủ thờ'),(3,N'Tranh sơn dầu');
+
+INSERT INTO PRODUCT(CATID,SELLERID,NAME,UPTIME,COST,BUY,COSTJUMP,STATUS,ISRENEWAL)
+VALUES (1,3,N'Iphone 11','2019-12-11 13:23:10',20000000,NULL,500000,0,false),
+(2,3,N'Dell Inspiron','2019-12-13 18:23:10',15000000,NULL,500000,0,true),
+(2,4,N'Asus Vivobook','2019-12-13 14:11:10',25000000,30000000,500000,0,false),
+(1,3,N'Samsung Galaxy Note 10','2019-12-10 13:11:59',19000000,NULL,500000,0,true),
+(1,4,N'Iphone XS','2019-12-13 18:23:10',22000000,27000000,500000,0,true),
+(2,4,N'Dell Vostro','2019-12-16 11:21:56',15000000,20000000,500000,0,true),
+(2,3,N'Dell XPS','2019-12-15 11:22:51',30000000,37000000,500000,0,true),
+(1,3,N'Oppo F9','2019-11-04 23:29:51',7000000,10000000,500000,0,true),
+(1,3,N'Samsung Galaxy A9','2019-12-19 16:54:26',10000000,14000000,250000,0,true),
+(2,4,N'Acer Aspire','2019-12-17 09:43:00',15000000,20000000,500000,0,true),
+(3,3,N'Bàn gỗ lim','2019-12-16 09:12:26',5700000,NULL,100000,0,true),
+(3,4,N'Bàn gỗ sồi','2019-12-14 13:22:12',10000000,15000000,500000,0,true),
+(4,4,N'Tủ thờ gỗ lim','2019-12-17 11:28:29',10000000,14000000,500000,0,true),
+(5,3,N'Tĩnh vật','2019-12-13 17:19:33',3000000,5000000,100000,0,true);
+
+INSERT INTO PENDING(USERID,TIME)
+VALUES (1,'2019-12-20 19:11:10');
+
+INSERT INTO FAVORITE(USERID,PROID)
+VALUES (1,2),(1,4),(2,6),(2,7),(2,8),(3,1),(3,6),(3,10),(3,9),(4,2),(5,10),(5,8),
+(2,12),(2,14);
+
+INSERT INTO DESCRIBE (PROID,DES,TIME)
+VALUES 
+(1,N'Dòng điện thoại cao cấp nhất của Apple hiện nay','2019-12-11 21:11:21'),
+(1,N'Có bộ nhớ trong 128GB, RAM 3GB','2019-12-11 23:11:19'),
+(7,N'Máy tính cao cấp của hãng DELL','2019-12-18 11:41:50'),
+(11,N'Kích thước 2m x 1.1m x 0.7 m','2019-12-20 00:09:22'),
+(14,N'Được làm từ chất liệu sơn dầu','2019-12-14 00:45:11'),
+(14,N'Hoàn thành năm 2007','2019-12-14 00:49:33');
+
+INSERT INTO RESTRICT(PROID,USERID)
+VALUES (3,1);
+
+INSERT INTO ALLOW(PROID,USERID)
+VALUES (1,1),(2,2),(3,3),(1,2),(1,5),(1,4),(2,1);
+
+INSERT INTO BID(PROID,USERID,TIME,PRICE)
+VALUES 
+(1,2,'2019-12-20 11:12:10',20000000),
+(1,2,'2019-12-20 12:12:10',20500000),
+(1,1,'2019-12-20 22:12:10',22000000),
+(2,1,'2019-12-20 23:11:12',15000000),
+(2,2,'2019-12-20 23:41:10',16000000),
+(14,1,'2019-12-16 12:33:04',3500000),
+(14,5,'2019-12-17 00:02:33',5000000);
+
+INSERT INTO COMMENT(PROID,USERID,COMMENT,TIME)
+VALUES
+(1,1,N'I HAVE IT!!!','2019-12-20 23:54:07'),
+(1,3,N'REMEMBER TO PAY THIS','2019-12-20 23:59:54'),
+(14,5,N'Thắng rồi!!!','2019-12-17 09:01:45');

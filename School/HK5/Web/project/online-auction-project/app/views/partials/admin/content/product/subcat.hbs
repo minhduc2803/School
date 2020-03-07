@@ -1,0 +1,11 @@
+<ul class="nav nav-tabs card-header-tabs">
+    {{#each subcat}}
+     <li class="nav-item">
+        <a id="{{sub}}" class="nav-link" href="/admin/product/{{cat}}/{{sub}}">{{sub}}</a>
+      </li>
+    {{/each}}
+
+    <li class="nav-item" id="addsub">
+        <button id='sub_but' type="button" class="btn btn-success" onclick="add_input('addsub','inputsub','sub_but','{{active_cat}}')">+</button>
+      </li>
+    </ul>

@@ -1,0 +1,57 @@
+<div class="row py-2 d-flex justify-content-center" > 
+    <div class="offset-0" >
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" autocomplete="off">
+        </div>
+
+
+        <div class="form-group">
+            <label for="subcat">Category</label>
+            <select name="subcat" id="subcat">
+                {{#subs}}
+                <option value="{{sub}}">{{sub}}</option>
+                {{/subs}}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input id="browse" name='browse' type="file" onchange="previewFiles()" multiple accept=".png, .jpg, .jpeg">
+            <div id="preview"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="cost">Price</label>
+            <input type="TEXT" class="form-control" name='price' id="cost" autocomplete="off" min="1">
+        </div>
+        <div class="form-group">
+            <label for="jump">Cost jump</label>
+            <input type="TEXT" class="form-control" name='jump' id="jump" autocomplete="off" min="1">
+        </div>
+        <div class="form-group">
+            <label for="cost2">Max price(optional)</label>
+            <input type="TEXT" class="form-control" name='cost2' id="cost2" autocomplete="off" min="1">
+        </div> 
+
+        <textarea id="editor" name="editor"></textarea>
+        <script> var editor = new Jodit('#editor');
+            editor.value = '<p>Description goes here</p>';
+            
+        </script>
+
+        <div class="form-group">
+            <label for="auto">Extended Bidding</label>
+            <select name="auto" id="auto">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success" onclick="upload()">Submit</button>
+        </div>
+
+    </div>
+</div>

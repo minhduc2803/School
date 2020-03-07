@@ -1,0 +1,20 @@
+<div class="row py-2 d-flex justify-content-center">
+    <div class="offset-0">
+        <h2>Review</h2>
+        <h4>User's rate: {{avg}}</h4>
+        {{#if flag}}
+        {{#rs}}
+        <div class="media bg-white">
+            <div class="media-body">
+                <h5 class="mt-0 text-primary">{{username}}</h5>
+                <p>{{time date 'Do MMM YYYY'}}</p>
+                <p>Rate: {{rate}}</p>
+                <p>{{text}}</p>
+            </div>
+        </div>
+        {{/rs}}
+        {{else}}
+        <p>No review!</p>
+        {{/if}}
+    </div>
+</div>

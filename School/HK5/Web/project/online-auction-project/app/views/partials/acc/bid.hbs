@@ -1,0 +1,36 @@
+<h2 class="text-center">Auctions</h2>
+
+{{#if flag}}
+<div class="row py-2 d-flex justify-content-center">
+    {{#rs}}
+    <div class="col-2 p-3">
+        <a href="/pro/{{id}}" style="text-decoration: none;">
+            <div class="card mb-3 sd h-100 text-dark">
+                <script src="/javascripts/script.js"></script>
+                <script>newitem('{{start}}', 10);</script>
+
+                <img class=" card-img-top" src="/images/sp/{{id}}/thumb.jpg" alt="Card image cap" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">Title: {{name}}</h5>
+                    <p class="card-text">Start: {{time start 'Do MMM YYYY'}} </p>
+                </div>
+                <div class="card-footer">
+                    <p id="i{{id}}" class="text-danger font-weight-bold"></p>
+                    <script src="/javascripts/script.js"></script>
+                    <script>timeleft('i{{id}}', '{{end}}');</script>
+                </div>
+            </div>
+        </a>
+        {{#if wl}}
+        <button id="ib{{id}}" onclick="rm(this, {{id}})" class="btn btn-danger float-right"
+            style="position: absolute; right: 20px; bottom: 20px;">remove</button>
+        {{else}}
+        <button id="ib{{id}}" onclick="add(this, {{id}})" class="btn btn-success float-right"
+            style="position: absolute; right: 20px; bottom: 20px;">add</button>
+        {{/if}}
+    </div>
+    {{/rs}}
+</div>
+{{else}}
+<p class="text-center">Empty!</p>
+{{/if}}

@@ -1,0 +1,21 @@
+.containerSlide {
+    position: relative;
+}
+
+.mySlide {
+    display: none;
+}
+
+.cursorSlide {
+    cursor: pointer;
+}
+
+.demoSlide {
+    opacity: 0.9;
+}
+
+.activeSlide,
+.demoSlide:hover {
+    opacity: 1;
+    border: 2px solid #0097ba;
+}

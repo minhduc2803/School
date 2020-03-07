@@ -1,0 +1,113 @@
+<h3>Expire Soon</h3>
+<div class="row py-2 d-flex justify-content-center">
+    {{#times}}
+    <div class="col-2">
+        <a href="/pro/{{id}}" style="text-decoration: none;">
+            <div class="card mb-3 sd h-100 text-dark">
+                <script src="/javascripts/script.js"></script>
+                <script>newitem('{{start}}', 10);</script>
+                <img class=" card-img-top" src="/images/sp/{{id}}/1.jpg" alt="Card image cap" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    {{#if cost2}}
+                    <p class="card-text">Max bid: {{cost2}} VND</p>
+                    {{/if}}
+                    {{#if n}}
+                    <p class="card-text">Holder: **** {{bname}}</p>
+                    {{/if}}
+                </div>
+                <div class="card-footer">
+                    <p class="card-text text-secondary">Starts {{time start 'Do MMM YYYY'}}</p>
+                    <p id="t{{id}}" class="card-text text-danger font-weight-bold">
+                        <script src="/javascripts/script.js"></script>
+                        <script>dayleft('t{{id}}', '{{end}}');</script>
+                    </p>
+                    {{#if n}}
+                    <p class="card-text font-weight-bold">{{price}} VND
+                        <span class="font-weight-light text-secondary">{{n}} bids</span>
+                    </p>
+                    {{else}}
+                    <p class="card-text font-weight-bold">{{cost}} VND</p>
+                    {{/if}}
+                </div>
+            </div>
+        </a>
+    </div>
+    {{/times}}
+</div>
+
+<h3>Top Bids</h3>
+<div class="row py-2 d-flex justify-content-center">
+    {{#bids}}
+    <div class="col-2">
+        <a href="/pro/{{id}}" style="text-decoration: none;">
+            <div class="card mb-3 sd h-100 text-dark">
+                <script src="/javascripts/script.js"></script>
+                <script>newitem('{{start}}', 10);</script>
+                <img class=" card-img-top" src="/images/sp/{{id}}/1.jpg" alt="Card image cap" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    {{#if cost2}}
+                    <p class="card-text">Max bid: {{cost2}} VND</p>
+                    {{/if}}
+                    {{#if n}}
+                    <p class="card-text">Holder: **** {{bname}}</p>
+                    {{/if}}
+                </div>
+                <div class="card-footer">
+                    <p class="card-text text-secondary">Starts {{time start 'Do MMM YYYY'}}</p>
+                    <p id="t{{id}}" class="card-text text-danger font-weight-bold">
+                        <script src="/javascripts/script.js"></script>
+                        <script>dayleft('t{{id}}', '{{end}}');</script>
+                    </p>
+                    {{#if n}}
+                    <p class="card-text font-weight-bold">{{price}} VND
+                        <span class="font-weight-light text-secondary">{{n}} bids</span>
+                    </p>
+                    {{else}}
+                    <p class="card-text font-weight-bold">{{cost}} VND</p>
+                    {{/if}}
+                </div>
+            </div>
+        </a>
+    </div>
+    {{/bids}}
+</div>
+
+<h3>Top Price</h3>
+<div class="row py-2 d-flex justify-content-center">
+    {{#costs}}
+    <div class="col-2">
+        <a href="/pro/{{id}}" style="text-decoration: none;">
+            <div class="card mb-3 sd h-100 text-dark">
+                <script src="/javascripts/script.js"></script>
+                <script>newitem('{{start}}', 10);</script>
+                <img class=" card-img-top" src="/images/sp/{{id}}/1.jpg" alt="Card image cap" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    {{#if cost2}}
+                    <p class="card-text">Max bid: {{cost2}} VND</p>
+                    {{/if}}
+                    {{#if n}}
+                    <p class="card-text">Holder: **** {{bname}}</p>
+                    {{/if}}
+                </div>
+                <div class="card-footer">
+                    <p class="card-text text-secondary">Starts {{time start 'Do MMM YYYY'}}</p>
+                    <p id="t{{id}}" class="card-text text-danger font-weight-bold">
+                        <script src="/javascripts/script.js"></script>
+                        <script>dayleft('t{{id}}', '{{end}}');</script>
+                    </p>
+                    {{#if n}}
+                    <p class="card-text font-weight-bold">{{price}} VND
+                        <span class="font-weight-light text-secondary">{{n}} bids</span>
+                    </p>
+                    {{else}}
+                    <p class="card-text font-weight-bold">{{cost}} VND</p>
+                    {{/if}}
+                </div>
+            </div>
+        </a>
+    </div>
+    {{/costs}}
+</div>

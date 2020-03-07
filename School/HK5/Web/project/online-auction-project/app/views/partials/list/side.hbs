@@ -1,0 +1,26 @@
+<div class="card-header text-light bg-dark">
+    {{#if keyword}}
+    <h3>All Categories</h3>
+    {{else}}
+    <h3>{{catn}}</h3>
+    {{/if}}
+</div>
+<div class="list-group">
+    {{#if keyword}}
+    {{#cats}}
+    <a href="search?keyword={{../keyword}}&cat={{cat}}"
+        class="btn list-group-item list-group-item-action font-weight-bold {{#equal cat ../catn}} active btn-light {{/equal}}">
+        <p>{{cat}}</p>
+    </a>
+    {{/cats}}
+    {{else}}
+    {{#subs}}
+    {{#equal cat ../catn}}
+    <a href="/cat/{{../catn}}/{{sub}}"
+        class="btn list-group-item list-group-item-action font-weight-bold {{#equal sub ../subn}} active btn-light {{/equal}}">
+        <p>{{sub}}</p>
+    </a>
+    {{/equal}}
+    {{/subs}}
+    {{/if}}
+</div>

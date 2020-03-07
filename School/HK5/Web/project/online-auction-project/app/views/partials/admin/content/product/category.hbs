@@ -1,0 +1,32 @@
+<ul class="nav nav-tabs card-header-tabs">
+    {{#each category}}
+     <li class="nav-item">
+        <a id="{{cat}}" class="nav-link" href="/admin/product/{{cat}}">{{cat}}</a>
+      </li>
+    {{/each}}
+
+    <li class="nav-item" id='addcat'>
+        <button id='cat_but' type="button" class="btn btn-success" onclick="cf('#rsModal')">+</button>
+      </li>
+    </ul>
+
+    <div id="rsModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="rsTitle" class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="cm('#rsModal')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <p>Add new category</p>
+            <input id='cat_input' cattype='text'></input>
+            <p>Add new sub category</p>
+            <input id='sub_input' cattype='text'></input>
+            <div id="rsBody" class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal" onclick="adds()">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

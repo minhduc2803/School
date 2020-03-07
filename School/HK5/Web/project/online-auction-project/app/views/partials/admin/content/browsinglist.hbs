@@ -1,0 +1,39 @@
+
+        <div class="card text-center">
+
+<div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+     <li class="nav-item">
+        <a id="bidder" class="nav-link" href="/admin/user/bidder">Bidder</a>
+      </li>
+      <li class="nav-item">
+        <a id="seller" class="nav-link" href="/admin/user/seller" >Seller</a>
+      </li>
+         <li class="nav-item">
+        <a id="admin" class="nav-link" href="/admin/user/admin">Admin</a>
+      </li>
+      <li class="nav-item">
+        <a id="browsinglist" class="nav-link" href="/admin/user/browsinglist">Browsing list</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+        
+         <table class="table table-bordered">
+  <tr>
+    <td>username</td>
+    <td>email</td>
+  </tr>
+  {{#each user}}
+  <tr>
+    <td>{{username}}</td>
+    <td>{{email}}</td>
+    <td><button type="button" class="btn btn-success" onclick="mote({{id}},{{type}})">Promote to seller</button></td>
+  </tr>
+  {{/each}}
+</table>
+    
+    </div>
+
+
+</div>
