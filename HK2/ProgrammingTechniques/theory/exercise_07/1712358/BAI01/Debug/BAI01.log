@@ -1,0 +1,9 @@
+﻿  FUNC.cpp
+c:\users\admin\documents\visual studio 2017\projects\lythuyet_tuan07\bai01\func.cpp(6): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\admin\documents\visual studio 2017\projects\lythuyet_tuan07\bai01\func.cpp(8): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\admin\documents\visual studio 2017\projects\lythuyet_tuan07\bai01\func.cpp(13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\admin\documents\visual studio 2017\projects\lythuyet_tuan07\bai01\func.cpp(20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\admin\documents\visual studio 2017\projects\lythuyet_tuan07\bai01\func.cpp(22): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\admin\documents\visual studio 2017\projects\lythuyet_tuan07\bai01\func.cpp(27): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  BAI01.vcxproj -> c:\users\admin\documents\visual studio 2017\Projects\LYTHUYET_TUAN07\Debug\BAI01-04.exe
+  BAI01.vcxproj -> c:\users\admin\documents\visual studio 2017\Projects\LYTHUYET_TUAN07\Debug\BAI01-04.pdb (Partial PDB)
