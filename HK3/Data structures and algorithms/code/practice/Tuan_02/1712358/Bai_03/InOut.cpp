@@ -28,13 +28,13 @@ void test_time(int B[], int N, void sort(int A[], int N))
 void test_sort(int A[], int N)
 {
 	int *B = new int[N];
-	/*copy(A, B, N);
+	copy(A, B, N);
 	test_time(B, N, SelectionSort);
 	copy(A, B, N);
 	test_time(B, N, BubbleSort);
 	copy(A, B, N);
 	test_time(B, N, InsertionSort);
-	copy(A, B, N);*/
+	copy(A, B, N);
 	test_time(B, N, MergeSort);
 	copy(A, B, N);
 	test_time(B, N, QuickSort);
@@ -45,9 +45,9 @@ void test_sort(int A[], int N)
 	copy(A, B, N);
 	test_time(B, N, ShellSort);
 	copy(A, B, N);
-	/*test_time(B, N, BinaryInsertionSort);
+	test_time(B, N, BinaryInsertionSort);
 	copy(A, B, N);
 	test_time(B, N, ShakerSort);
 	copy(A, B, N);
-	test_time(B, N, InterchangeSort);*/
+	test_time(B, N, InterchangeSort);
 }

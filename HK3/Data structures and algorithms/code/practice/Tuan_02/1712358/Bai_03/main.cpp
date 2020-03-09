@@ -3,7 +3,7 @@
 
 int main()
 {
-	int const N = 100000000;
+	int const N = 300000;
 	int *A = new int[N];
 	input(A, N);
 

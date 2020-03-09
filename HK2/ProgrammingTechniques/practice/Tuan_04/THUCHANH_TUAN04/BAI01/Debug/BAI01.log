@@ -1,0 +1,7 @@
+﻿  INOUT.cpp
+  HANDLE.cpp
+  BAI01.cpp
+f:\code\bai01\bai01.cpp(5): warning C4101: 'S1': unreferenced local variable
+  Generating Code...
+  BAI01.vcxproj -> F:\code\THUCHANH_TUAN04\Debug\BAI01.exe
+  BAI01.vcxproj -> F:\code\THUCHANH_TUAN04\Debug\BAI01.pdb (Partial PDB)

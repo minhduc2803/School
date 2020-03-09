@@ -1,0 +1,19 @@
+ls
+ps &
+!!
+history
+history -c
+!!
+history
+ps > txt
+sort -r < txt
+cat txt | sort
+sort < txt >> txt
+cat < input | sort | uniq >> txt
+pwd
+cd bin
+pwd
+cd ..
+pwd
+help
+exit
